@@ -1,0 +1,39 @@
+# CryptoChat - Serveur de Chat Crypté en CLI
+
+## Phase de Planification
+- [ ] Recherche et sélection des bibliothèques de cryptographie (ring, rust-crypto).
+- [ ] Sélectionner les bibliothèques pour la programmation réseau asynchrone (tokio, async-std).
+- [ ] Conception de l'architecture de l'application.
+
+## Phase de Développement
+
+### Configuration Initiale
+- [ ] Initialiser le projet avec Cargo.
+- [ ] Configurer le Cargo.toml avec les dépendances nécessaires.
+
+### Développement du Serveur
+- [ ] Implémenter l'écoute des connexions clients.
+- [ ] Gérer les salles de chat et les utilisateurs connectés.
+- [ ] Implémenter la logique asynchrone pour les connexions et les messages.
+
+### Développement du Client
+- [ ] Créer l'interface CLI avec clap pour gérer les entrées utilisateur.
+- [ ] Implémenter le cryptage et décryptage des messages côté client.
+
+### Sécurité
+- [ ] Développer le système d'authentification des utilisateurs.
+- [ ] Assurer la gestion sécurisée des identifiants et des clés de cryptage.
+- [ ] Effectuer des tests de sécurité pour identifier les vulnérabilités.
+
+## Phase de Test
+- [ ] Écrire et exécuter des tests unitaires et d'intégration.
+- [ ] Réaliser des tests d'utilisabilité et ajuster l'interface CLI selon les retours.
+
+## Phase de Déploiement
+- [ ] Compiler le projet pour les systèmes cibles.
+- [ ] Préparer la documentation utilisateur et mettre en ligne le serveur.
+
+## Maintenance et Amélioration
+- [ ] Mettre en place un système de feedback utilisateur.
+- [ ] Corriger les bugs et apporter des améliorations basées sur les retours.
+- [ ] Planifier et implémenter de nouvelles fonctionnalités.
