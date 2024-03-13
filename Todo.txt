@@ -1,15 +1,15 @@
 # CryptoChat - Serveur de Chat Crypté en CLI
 
 ## Phase de Planification
-- [ ] Recherche et sélection des bibliothèques de cryptographie (ring, rust-crypto).
-- [ ] Sélectionner les bibliothèques pour la programmation réseau asynchrone (tokio, async-std).
-- [ ] Conception de l'architecture de l'application.
+- [X] Recherche et sélection des bibliothèques de cryptographie (ring, rust-crypto).
+- [X] Sélectionner les bibliothèques pour la programmation réseau asynchrone (tokio, async-std).
+- [X] Conception de l'architecture de l'application.
 
 ## Phase de Développement
 
 ### Configuration Initiale
-- [ ] Initialiser le projet avec Cargo.
-- [ ] Configurer le Cargo.toml avec les dépendances nécessaires.
+- [X] Initialiser le projet avec Cargo.
+- [X] Configurer le Cargo.toml avec les dépendances nécessaires.
 
 ### Développement du Serveur
 - [ ] Implémenter l'écoute des connexions clients.
