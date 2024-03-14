@@ -1,0 +1,11 @@
+/Users/paulbaudinot/RustroverProjects/CryptoChat/client/target/debug/deps/libsocket2-0f735788dbff17e5.rmeta: /Users/paulbaudinot/.cargo/registry/src/index.crates.io-6f17d22bba15001f/socket2-0.5.6/src/lib.rs /Users/paulbaudinot/.cargo/registry/src/index.crates.io-6f17d22bba15001f/socket2-0.5.6/src/sockaddr.rs /Users/paulbaudinot/.cargo/registry/src/index.crates.io-6f17d22bba15001f/socket2-0.5.6/src/socket.rs /Users/paulbaudinot/.cargo/registry/src/index.crates.io-6f17d22bba15001f/socket2-0.5.6/src/sockref.rs /Users/paulbaudinot/.cargo/registry/src/index.crates.io-6f17d22bba15001f/socket2-0.5.6/src/sys/unix.rs
+
+/Users/paulbaudinot/RustroverProjects/CryptoChat/client/target/debug/deps/libsocket2-0f735788dbff17e5.rlib: /Users/paulbaudinot/.cargo/registry/src/index.crates.io-6f17d22bba15001f/socket2-0.5.6/src/lib.rs /Users/paulbaudinot/.cargo/registry/src/index.crates.io-6f17d22bba15001f/socket2-0.5.6/src/sockaddr.rs /Users/paulbaudinot/.cargo/registry/src/index.crates.io-6f17d22bba15001f/socket2-0.5.6/src/socket.rs /Users/paulbaudinot/.cargo/registry/src/index.crates.io-6f17d22bba15001f/socket2-0.5.6/src/sockref.rs /Users/paulbaudinot/.cargo/registry/src/index.crates.io-6f17d22bba15001f/socket2-0.5.6/src/sys/unix.rs
+
+/Users/paulbaudinot/RustroverProjects/CryptoChat/client/target/debug/deps/socket2-0f735788dbff17e5.d: /Users/paulbaudinot/.cargo/registry/src/index.crates.io-6f17d22bba15001f/socket2-0.5.6/src/lib.rs /Users/paulbaudinot/.cargo/registry/src/index.crates.io-6f17d22bba15001f/socket2-0.5.6/src/sockaddr.rs /Users/paulbaudinot/.cargo/registry/src/index.crates.io-6f17d22bba15001f/socket2-0.5.6/src/socket.rs /Users/paulbaudinot/.cargo/registry/src/index.crates.io-6f17d22bba15001f/socket2-0.5.6/src/sockref.rs /Users/paulbaudinot/.cargo/registry/src/index.crates.io-6f17d22bba15001f/socket2-0.5.6/src/sys/unix.rs
+
+/Users/paulbaudinot/.cargo/registry/src/index.crates.io-6f17d22bba15001f/socket2-0.5.6/src/lib.rs:
+/Users/paulbaudinot/.cargo/registry/src/index.crates.io-6f17d22bba15001f/socket2-0.5.6/src/sockaddr.rs:
+/Users/paulbaudinot/.cargo/registry/src/index.crates.io-6f17d22bba15001f/socket2-0.5.6/src/socket.rs:
+/Users/paulbaudinot/.cargo/registry/src/index.crates.io-6f17d22bba15001f/socket2-0.5.6/src/sockref.rs:
+/Users/paulbaudinot/.cargo/registry/src/index.crates.io-6f17d22bba15001f/socket2-0.5.6/src/sys/unix.rs:
