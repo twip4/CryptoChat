@@ -10,7 +10,6 @@ struct User {
 
 fn connexion() -> User {
     let mut tmp_login = String::new();
-    let mut tmp_password = String::new();
 
     println!("Please enter your login:");
     std::io::stdin()
@@ -19,10 +18,8 @@ fn connexion() -> User {
     tmp_login = tmp_login.trim().to_string();
 
     println!("Please enter your password:");
-    std::io::stdin()
-        .read_line(&mut tmp_password)
-        .expect("Failed to read line");
-    tmp_password = tmp_password.trim().to_string();
+    let tmp_password = rpassword::read_password().expect("Failed to read password");
+
 
     User {
         login: tmp_login,
@@ -39,9 +36,9 @@ async fn main() -> io::Result<()> {
 
     let mut stream = TcpStream::connect("127.0.0.1:7878").await.expect("error connection");
 
-    loop {
+    println!("Successfully connected to server in Crypto Chat");
 
-        println!("Successfully connected to server in Crypto Chat");
+    loop {
 
         user = connexion();
 
@@ -61,12 +58,16 @@ async fn main() -> io::Result<()> {
         if message.trim() == "OK" {
             println!("Authentification réussie.");
             break;
-        } else {
-            println!("Échec de l'authentification. Connexion fermée.");
+        }
+        else if message.trim() == "ERROR" {
+            println!("Échec de l'authentification.");
+        }
+        else {
+            println!("Connexion fermée.");
             stream.shutdown().await?;
+            process::exit(0);
         }
     }
-
 
 
     let mut stdin = BufReader::new(io::stdin());
@@ -81,7 +82,7 @@ async fn main() -> io::Result<()> {
                     println!("Server closed the connection.");
                     break;
                 }
-                println!("Received: {}", String::from_utf8_lossy(&buffer[..bytes_read]));
+                println!("{}", String::from_utf8_lossy(&buffer[..bytes_read]));
             },
             read_result = stdin.read_line(&mut stdin_buffer) => {
                 let bytes_read = read_result?;
