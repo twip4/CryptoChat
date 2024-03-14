@@ -82,7 +82,7 @@ async fn main() -> io::Result<()> {
                     println!("Server closed the connection.");
                     break;
                 }
-                println!("{}", String::from_utf8_lossy(&buffer[..bytes_read]));
+                println!("{}", String::from_utf8_lossy(&buffer[..bytes_read]).trim_end_matches('\n'));
             },
             read_result = stdin.read_line(&mut stdin_buffer) => {
                 let bytes_read = read_result?;

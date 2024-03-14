@@ -129,7 +129,7 @@ async fn handle_client(mut stream: TcpStream, clients: Arc<AsyncMutex<Vec<Client
                 if !message.is_empty() {
                     message = format!("{} : {}", me.pseudo, message).into();
                     broadcast_write(me.clone(), clients.clone(), message.to_string()).await;
-                    println!("Message from {}: {}", addr, message);
+                    println!("Message from {}: {}", addr, message.trim_end_matches('\n'));
                 }
             },
             Err(e) => {
