@@ -1,3 +1,5 @@
+mod treatment;
+
 use std::borrow::Cow;
 use std::io::{Read, Write};
 use std::net::{Shutdown, SocketAddr, TcpListener, TcpStream};
@@ -127,9 +129,9 @@ async fn handle_client(mut stream: TcpStream, clients: Arc<AsyncMutex<Vec<Client
                 }
                 let mut message = String::from_utf8_lossy(&buffer[..bytes_read]);
                 if !message.is_empty() {
-                    message = format!("{} : {}", me.pseudo, message).into();
+                    message = Cow::from(treatment::treatment::analyse(message.to_string(), me.clone()));
                     broadcast_write(me.clone(), clients.clone(), message.to_string()).await;
-                    println!("Message from {}: {}", addr, message.trim_end_matches('\n'));
+                    println!("Message from {}: {}", addr, message);
                 }
             },
             Err(e) => {
