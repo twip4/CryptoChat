@@ -78,7 +78,7 @@ async fn handle_client(mut stream: TcpStream, clients: Arc<AsyncMutex<Vec<Client
         match stream.read(&mut response) {
             Ok(bytes_read) => {
                 if bytes_read == 0 {
-                    println!("Connection closed by client {}", addr);
+                    println!("Connection closed by clientdzdz {}", addr);
                     let mut clients_guard = clients.lock().await;
                     clients_guard.retain(|client| client.addr != addr);
                     return;
@@ -124,7 +124,7 @@ async fn handle_client(mut stream: TcpStream, clients: Arc<AsyncMutex<Vec<Client
         match stream.read(&mut buffer) {
             Ok(bytes_read) => {
                 if bytes_read == 0 {
-                    println!("Connection closed by client {}", addr);
+                    println!("Connection closed by clientdzdz {}", addr);
                     break;
                 }
                 let mut message = String::from_utf8_lossy(&buffer[..bytes_read]);
