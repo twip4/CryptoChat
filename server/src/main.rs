@@ -78,7 +78,7 @@ async fn handle_client(mut stream: TcpStream, clients: Arc<AsyncMutex<Vec<Client
         match stream.read(&mut response) {
             Ok(bytes_read) => {
                 if bytes_read == 0 {
-                    println!("Connection closed by clientdzdz {}", addr);
+                    println!("Connection closed by client {}", addr);
                     let mut clients_guard = clients.lock().await;
                     clients_guard.retain(|client| client.addr != addr);
                     return;
@@ -127,11 +127,20 @@ async fn handle_client(mut stream: TcpStream, clients: Arc<AsyncMutex<Vec<Client
                     println!("Connection closed by clientdzdz {}", addr);
                     break;
                 }
-                let mut message = String::from_utf8_lossy(&buffer[..bytes_read]);
+                let message = String::from_utf8_lossy(&buffer[..bytes_read]);
                 if !message.is_empty() {
-                    message = Cow::from(treatment::treatment::analyse(message.to_string(), me.clone()));
-                    broadcast_write(me.clone(), clients.clone(), message.to_string()).await;
-                    println!("Message from {}: {}", addr, message);
+                    let (message,commande) = treatment::treatment::analyse(message.to_string(), me.clone());
+                    if commande {
+                        if message == "KO"{
+                            stream.write_all(b" KO \n").expect("Failed to send success message");
+                            break;
+                        }
+                        stream.write_all(message.as_bytes()).expect("Failed to send success message");
+                    }
+                    else {
+                        broadcast_write(me.clone(), clients.clone(), message.to_string()).await;
+                        println!("Message from {}: {}", addr, message);
+                    }
                 }
             },
             Err(e) => {
@@ -142,6 +151,7 @@ async fn handle_client(mut stream: TcpStream, clients: Arc<AsyncMutex<Vec<Client
     }
     let mut clients_guard = clients.lock().await;
     clients_guard.retain(|client| client.addr != addr);
+    let _ = stream.shutdown(Shutdown::Both);
 }
 
 async fn broadcast_write(emeteur: Client, clients: Arc<Mutex<Vec<Client>>>, msg: String) {
